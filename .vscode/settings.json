@@ -1,0 +1,12 @@
+{
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": true,
+  "editor.formatOnSave": true,
+  "files.autoSave": "onFocusChange",
+  "tslint.autoFixOnSave": true,
+  "tslint.ignoreDefinitionFiles": false,
+  "tslint.exclude": "**/node_modules/**/*",
+  "prettier.singleQuote": false,
+  "prettier.semi": false,
+  "typescript.tsdk": "./node_modules/typescript/lib"
+}

@@ -1,0 +1,207 @@
+import { CodeSurfer } from "mdx-deck-code-surfer"
+import { Head } from 'mdx-deck'
+import { future } from 'mdx-deck/themes'
+import vsDark from 'prism-react-renderer/themes/vsDark'
+import { Image } from 'mdx-deck'
+
+export const theme = {
+  ...future,
+  codeSurfer: {
+    ...vsDark,
+    showNumbers: false,
+    lang:"typescript"
+  },
+}
+
+<Head>
+  <title>TypeScript Intro</title>
+</Head>
+
+# hello
+
+---
+
+<CodeSurfer
+  title="type annotation"
+  code={require("!raw-loader!./src/01-basic.ts")}
+  steps={[
+    { range:[1, 100] }, 
+    { lines:[1] }, 
+    { lines:[5] },
+    { lines:[20] },
+    { lines:[30] },
+  ]}
+/>
+
+---
+
+<CodeSurfer
+  title="interface"
+  code={require("!raw-loader!./src/02-interface.ts")}
+  steps={[
+    { range:[1, 100] }, 
+    { lines:[1] },
+  ]}
+/>
+
+---
+
+<CodeSurfer
+  title="class"
+  code={require("!raw-loader!./src/03-class.ts")}
+  steps={[
+    { range:[1, 100] }, 
+    { lines:[1] },
+  ]}
+/>
+
+---
+
+类型尽可能精确
+interface > type alias
+
+---
+
+<CodeSurfer
+  title="generic"
+  code={require("!raw-loader!./src/04-generic.ts")}
+  steps={[
+    { range:[1, 100] }, 
+    { lines:[1] },
+  ]}
+/>
+
+---
+
+<CodeSurfer
+  title="type alias"
+  code={require("!raw-loader!./src/05-typealias.ts")}
+  steps={[
+    { range:[1, 100] },
+    { lines:[1] },
+  ]}
+/>
+
+---
+
+<CodeSurfer
+  title="union type"
+  code={require("!raw-loader!./src/06-union.ts")}
+  steps={[
+    { range:[1, 100] }, 
+    { lines:[1] },
+  ]}
+/>
+
+---
+
+<CodeSurfer
+  title="intersection type"
+  code={require("!raw-loader!./src/07-intersection.ts")}
+  steps={[
+    { range:[1, 100] }, 
+    { lines:[1] },
+  ]}
+/>
+
+---
+
+<CodeSurfer
+  title="literal type"
+  code={require("!raw-loader!./src/08-literal.ts")}
+  steps={[
+    { range:[1, 100] }, 
+    { lines:[1] },
+  ]}
+/>
+
+---
+
+<CodeSurfer
+  title="type guard"
+  code={require("!raw-loader!./src/09-type-guard.ts")}
+  steps={[
+    { range:[1, 100] }, 
+    { lines:[1] },
+  ]}
+/>
+
+---
+
+<CodeSurfer
+  title="exhaustiveness checking"
+  code={require("!raw-loader!./src/10-exhaustiveness-checking.ts")}
+  steps={[
+    { range:[1, 100] },
+    { lines:[1] },
+  ]}
+/>
+
+---
+
+
+<CodeSurfer
+  title="lookup type"
+  code={require("!raw-loader!./src/11-lookup-type.ts")}
+  steps={[
+    { range:[1, 100] },
+    { lines:[1] },
+  ]}
+/>
+
+---
+
+
+<CodeSurfer
+  title="conditional type"
+  code={require("!raw-loader!./src/12-conditional-type.ts")}
+  steps={[
+    { range:[1, 100] }, 
+    { lines:[1] },
+  ]}
+/>
+
+---
+
+<Image src="./static/turing.png" size="80%" />
+
+---
+
+
+## 工具链 tooling
+
+```bash
+npm i typescript
+tsc
+```
+
+---
+
+- tsserver: 类型检查，代码提示，代码重构，代码修复
+- TSLint/dtslint
+- TSDoc
+- VSCode
+- @types/xxx
+- webpack: ts-loader/fork-ts-checker-webpack-plugin
+- Babel 7
+
+---
+
+## 相关项目
+
+- react/JSX
+- vue
+- angular
+
+---
+
+## 其他toJS语言
+
+- Flow
+- Reason/BuckleScript
+- Elm
+
+---
+
+https://github.com/pomber/code-surfer
+https://github.com/jxnblk/mdx-deck
