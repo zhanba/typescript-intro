@@ -1,4 +1,4 @@
-import { CodeSurfer } from "mdx-deck-code-surfer"
+import { CodeSurfer } from 'mdx-deck-code-surfer'
 import { Head } from 'mdx-deck'
 import { future } from 'mdx-deck/themes'
 import vsDark from 'prism-react-renderer/themes/vsDark'
@@ -8,54 +8,60 @@ export const theme = {
   ...future,
   codeSurfer: {
     ...vsDark,
-    showNumbers: false,
-    lang:"typescript"
+    showNumbers: true,
+    lang: 'typescript',
   },
 }
 
 <Head>
-  <title>TypeScript Intro</title>
+  <title>Introduction to TypeScript</title>
 </Head>
 
-# hello
+Introduction to TypeScript
 
 ---
 
 <CodeSurfer
   title="type annotation"
-  code={require("!raw-loader!./src/01-basic.ts")}
-  steps={[
-    { range:[1, 100] }, 
-    { lines:[1] }, 
-    { lines:[5] },
-    { lines:[20] },
-    { lines:[30] },
-  ]}
+  code={require('!raw-loader!./src/01-basic.ts')}
+  steps={[{ range: [1, 100] }, { range: [1, 23] }, { range: [23, 46] }, { range: [46, 60] }]}
 />
 
 ---
 
 <CodeSurfer
   title="interface"
-  code={require("!raw-loader!./src/02-interface.ts")}
-  steps={[
-    { range:[1, 100] }, 
-    { lines:[1] },
-  ]}
+  code={require('!raw-loader!./src/02-interface.ts')}
+  steps={[{ range: [1, 100] }, { range: [1, 12] }, { range: [12, 100] }]}
 />
 
 ---
 
 <CodeSurfer
   title="class"
-  code={require("!raw-loader!./src/03-class.ts")}
-  steps={[
-    { range:[1, 100] }, 
-    { lines:[1] },
-  ]}
+  code={require('!raw-loader!./src/03-class.ts')}
+  steps={[{ range: [1, 100] }]}
 />
 
 ---
+
+<CodeSurfer
+  title="generic"
+  code={require('!raw-loader!./src/04-generic.ts')}
+  steps={[{ range: [1, 100] }]}
+/>
+
+---
+
+<CodeSurfer
+  title="type alias"
+  code={require('!raw-loader!./src/05-typealias.ts')}
+  steps={[{ range: [1, 100] }, { lines: [3] }]}
+/>
+
+---
+
+原则：
 
 类型尽可能精确
 interface > type alias
@@ -63,102 +69,65 @@ interface > type alias
 ---
 
 <CodeSurfer
-  title="generic"
-  code={require("!raw-loader!./src/04-generic.ts")}
-  steps={[
-    { range:[1, 100] }, 
-    { lines:[1] },
-  ]}
-/>
-
----
-
-<CodeSurfer
-  title="type alias"
-  code={require("!raw-loader!./src/05-typealias.ts")}
-  steps={[
-    { range:[1, 100] },
-    { lines:[1] },
-  ]}
-/>
-
----
-
-<CodeSurfer
   title="union type"
-  code={require("!raw-loader!./src/06-union.ts")}
-  steps={[
-    { range:[1, 100] }, 
-    { lines:[1] },
-  ]}
+  code={require('!raw-loader!./src/06-union.ts')}
+  steps={[{ range: [1, 100] }]}
 />
 
 ---
 
 <CodeSurfer
   title="intersection type"
-  code={require("!raw-loader!./src/07-intersection.ts")}
-  steps={[
-    { range:[1, 100] }, 
-    { lines:[1] },
-  ]}
+  code={require('!raw-loader!./src/07-intersection.ts')}
+  steps={[{ range: [1, 100] }]}
 />
 
 ---
 
 <CodeSurfer
   title="literal type"
-  code={require("!raw-loader!./src/08-literal.ts")}
-  steps={[
-    { range:[1, 100] }, 
-    { lines:[1] },
-  ]}
+  code={require('!raw-loader!./src/08-literal.ts')}
+  steps={[{ lines: [2] }, { range: [1, 20] }, { range: [20, 100] }]}
 />
 
 ---
 
 <CodeSurfer
   title="type guard"
-  code={require("!raw-loader!./src/09-type-guard.ts")}
-  steps={[
-    { range:[1, 100] }, 
-    { lines:[1] },
-  ]}
+  code={require('!raw-loader!./src/09-type-guard.ts')}
+  steps={[{ range: [1, 100] }]}
 />
 
 ---
 
 <CodeSurfer
   title="exhaustiveness checking"
-  code={require("!raw-loader!./src/10-exhaustiveness-checking.ts")}
-  steps={[
-    { range:[1, 100] },
-    { lines:[1] },
-  ]}
+  code={require('!raw-loader!./src/10-exhaustiveness-checking.ts')}
+  steps={[{ lines: [32] }, { range: [1, 100] }, { range: [1, 18] }, { range: [18, 100] }]}
 />
 
 ---
-
 
 <CodeSurfer
   title="lookup type"
-  code={require("!raw-loader!./src/11-lookup-type.ts")}
-  steps={[
-    { range:[1, 100] },
-    { lines:[1] },
-  ]}
+  code={require('!raw-loader!./src/11-lookup-type.ts')}
+  steps={[{ range: [1, 100] }]}
 />
 
 ---
 
-
 <CodeSurfer
   title="conditional type"
-  code={require("!raw-loader!./src/12-conditional-type.ts")}
-  steps={[
-    { range:[1, 100] }, 
-    { lines:[1] },
-  ]}
+  code={require('!raw-loader!./src/12-conditional-type.ts')}
+  steps={[{ range: [1, 100] }, { range: [1, 3] }, { range: [4, 11] }, { range: [11, 50] }]}
+/>
+
+---
+
+<CodeSurfer
+  title="return type"
+  code={require('!raw-loader!./src/12-conditional-type.ts')}
+  steps={[{ range: [1, 100] }, { range: [1, 3] }, { range: [4, 11] }, { range: [11, 50] }]}
 />
 
 ---
@@ -166,7 +135,6 @@ interface > type alias
 <Image src="./static/turing.png" size="80%" />
 
 ---
-
 
 ## 工具链 tooling
 
@@ -195,13 +163,8 @@ tsc
 
 ---
 
-## 其他toJS语言
+## 其他 toJS 语言
 
 - Flow
 - Reason/BuckleScript
 - Elm
-
----
-
-https://github.com/pomber/code-surfer
-https://github.com/jxnblk/mdx-deck
