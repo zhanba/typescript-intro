@@ -11,7 +11,8 @@ let isDone: boolean = false
 let list: number[] = [1, 2, 3]
 
 // tuple
-let x: [string, number] = ['hello', 10]
+let x: [string, number?] = ['hello', 10]
+const y = [1, 2, 3] as const
 
 // enum
 enum Color {

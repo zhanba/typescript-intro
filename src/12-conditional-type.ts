@@ -9,7 +9,7 @@ type T31 = Filter<'a' | 'b' | 'c' | 'd', 'a' | 'c' | 'f'> // "a" | "c"
 type T32 = Diff<string | number | (() => void), Function> // string | number
 type T33 = Filter<string | number | (() => void), Function> // () => void
 
-type NonNullable1<T> = Diff<T, null | undefined> // Remove null and undefined from T
+type NonNullableCopy<T> = Diff<T, null | undefined> // Remove null and undefined from T
 
 type T34 = NonNullable<string | number | undefined> // string | number
 type T35 = NonNullable<string | string[] | null | undefined> // string | string[]
@@ -25,3 +25,6 @@ function f2<T extends string | undefined>(x: T, y: NonNullable<T>) {
   const s1: string = x // Error
   const s2: string = y // Ok
 }
+
+//
+type ReturnTypeCopy<T> = T extends (...args: any[]) => infer R ? R : any

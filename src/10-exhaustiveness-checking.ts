@@ -32,3 +32,26 @@ function area(s: Shape) {
       return assertNever(s) // error here if there are missing cases
   }
 }
+
+/**
+ * 模式匹配!!
+ * @param m
+ */
+type Matcher<T extends string, R> = { [K in T]: (k: K) => R }
+
+export const match = <T extends string, R = void>(m: Matcher<T, R>) => (t: T) => m[t](t)
+
+// example
+type DemoType = 'cat' | 'dog' | 'bird'
+
+const result = match<DemoType, string>({
+  cat: () => 'return a string',
+  dog: () => 'return another string',
+  bird: () => 'oh',
+})
+
+const result2 = match<DemoType, boolean>({
+  cat: () => true,
+  dog: () => false,
+  bird: () => true,
+})
