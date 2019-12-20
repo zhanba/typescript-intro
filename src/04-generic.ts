@@ -17,7 +17,11 @@ function head<T>(array: T[]): T {
   return array[0]
 }
 
-const first = head([1, 2, 3])
+const head2 = <T>(array: T[]): T => {
+  return array[0]
+}
+
+const first = head([1, 2, 3, 's'])
 
 /**
  * 添加约束，bound

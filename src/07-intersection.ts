@@ -12,4 +12,20 @@ function merge<T, U>(fst: T, snd: U): T & U {
 }
 
 // no annotation!
-merge({ name: 'moe' }, { age: 50 })
+const s = merge({ name: 'moe' }, { age: 50 })
+
+interface A {
+  name: string
+  age: string
+}
+
+interface B {
+  age: number
+}
+
+type C = A & B
+
+const a: C = {
+  age: 1,
+  name: 'a',
+}

@@ -14,6 +14,8 @@ type NonNullableCopy<T> = Diff<T, null | undefined> // Remove null and undefined
 type T34 = NonNullable<string | number | undefined> // string | number
 type T35 = NonNullable<string | string[] | null | undefined> // string | string[]
 
+type C = NonNullable<string | undefined>
+
 function f1<T>(x: T, y: NonNullable<T>) {
   x = y // Ok
   y = x // Error
